@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/main.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+
+            </div>
+        </div>
+        <div class="main">
+            <p>1. Есть кнопка button рядом с ней есть текст (Hello) необходимо при нажатии на кнопку поменять текст кнопки на (Привет)</p>
+
+            <h3>Решение</h3>
+            <button onclick="btnOne()">Кнопка</button>
+            <p id="txt">Hello</p>
+
+            <p>2. Есть кнопка button рядом с ней есть тэг &lt;b&gt;
+                &lt;/b&gt; (Hello) необходимо при нажатии на кнопку поменять тэг на &lt;h3&gt;&lt;/h3&gt; </p>
+
+            <h3>Решение</h3>
+            <button class="btn__one" onclick="btnTwo()">Кнопка</button>
+            <p id="txt_two"><b>Hello</b></p>
+
+            <p>3.Дан код</p>
+            <h2>Заголовок.</h2>
+            <ul id="list">
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+            </ul>
+            <p>Поменяйте содержимое списка на текс list их порядковый номер в коде.</p>
+            <h3>Решение</h3>
+            <button id="btn__three" onclick="changeList()">Поменять список</button>
+            <p>4. Создаека калькулятор
+                Есть 2 инпута и знак вопроса между ними дальше равенство и поле результата, в итоге должно получиться<br>
+
+                <input type="text" id="n1"> <span id="sign">?</span> <input type="text" id="n2"> = <span id="res">результат</span><br>
+                <button class="btn__calc" onclick="add()">+</button>
+                // при нажатии необходимо сложить<br>
+                <button class="btn__calc" onclick="sub()">-</button>
+                // при нажатии необходимо вычесть<br>
+                <button class="btn__calc" onclick="div()">/</button>
+                // при нажатии необходимо умножить<br>
+                <button class="btn__calc" onclick="mult()">*</button>
+                // при нажатии необходимо делить
+            </p>
+
+            <p>5.Дан элемент ul, а в нем li #list. Вставьте перед элементом #list новую li с текстом 'Первый элемент списка'</p>
+
+            <ul id="list__two">
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+                <li>list</li>
+            </ul>
+            <button id="btn__five" onclick="addNewListItem()">Добавить первый элемент.</button>
+            <p>6.Упростим задачу шахматной доски, создать просто доску 8 на 8, в которой будут черные и белые ячейки.</p>
+            <div class="main-block"></div>
+        </div>
+
+    </div>
+    <script>
+        function drawChess() {
+            let mainBlock = document.querySelector('.main-block');
+            let block;
+            let flag = true;
+
+            for (let i = 0; i < 8; i++) {
+                for (let j = 0; j < 8; j++) {
+                    if (j == 0) flag = !flag;
+
+                    block = document.createElement('div');
+
+                    if (flag) block.className = 'block black';
+                    else block.className = 'block white';
+
+                    mainBlock.appendChild(block);
+                    flag = !flag;
+                }
+            }
+        }
+
+        drawChess();
+
+    </script>
+</body>
+
+</html>
